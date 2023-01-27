@@ -51,7 +51,8 @@
             this.timer_checkBTNdelay = new System.Windows.Forms.Timer(this.components);
             this.lbl_valueData = new System.Windows.Forms.Label();
             this.hSB_switch = new System.Windows.Forms.HScrollBar();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_clickLight = new System.Windows.Forms.Label();
+            this.tt_explains = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // pnl_lightCheckP05
@@ -227,10 +228,6 @@
             this.lbl_P05.TabIndex = 12;
             this.lbl_P05.Text = "P0.5";
             // 
-            // timer_checkBTNdelay
-            // 
-            this.timer_checkBTNdelay.Interval = 1000;
-            // 
             // lbl_valueData
             // 
             this.lbl_valueData.AutoSize = true;
@@ -243,6 +240,7 @@
             // 
             // hSB_switch
             // 
+            this.hSB_switch.AccessibleDescription = "";
             this.hSB_switch.LargeChange = 1;
             this.hSB_switch.Location = new System.Drawing.Point(333, 45);
             this.hSB_switch.Maximum = 1;
@@ -251,23 +249,28 @@
             this.hSB_switch.TabIndex = 14;
             this.hSB_switch.Value = 1;
             this.hSB_switch.ValueChanged += new System.EventHandler(this.hSB_switch_ValueChanged);
+            this.hSB_switch.MouseHover += new System.EventHandler(this.hSB_switch_MouseHover);
             // 
-            // label1
+            // lbl_clickLight
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label1.Location = new System.Drawing.Point(146, 334);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 18);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "click the Panel (slow)";
+            this.lbl_clickLight.AutoSize = true;
+            this.lbl_clickLight.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lbl_clickLight.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbl_clickLight.Location = new System.Drawing.Point(146, 334);
+            this.lbl_clickLight.Name = "lbl_clickLight";
+            this.lbl_clickLight.Size = new System.Drawing.Size(148, 18);
+            this.lbl_clickLight.TabIndex = 15;
+            this.lbl_clickLight.Text = "click the Panel (slow)";
+            this.lbl_clickLight.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_clickLight.Click += new System.EventHandler(this.lbl_clickLight_Click);
+            this.lbl_clickLight.MouseHover += new System.EventHandler(this.lbl_clickLight_MouseHover);
             // 
             // Visualizer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(764, 361);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbl_clickLight);
             this.Controls.Add(this.hSB_switch);
             this.Controls.Add(this.lbl_valueData);
             this.Controls.Add(this.lbl_P05);
@@ -321,6 +324,7 @@
         private System.Windows.Forms.Timer timer_checkBTNdelay;
         private System.Windows.Forms.Label lbl_valueData;
         private System.Windows.Forms.HScrollBar hSB_switch;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_clickLight;
+        private System.Windows.Forms.ToolTip tt_explains;
     }
 }

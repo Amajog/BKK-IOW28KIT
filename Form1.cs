@@ -111,5 +111,27 @@ namespace IOW28KIT
             Visualizer Visualizer = new Visualizer();
             Visualizer.Show();
         }
+        private void btn_switchToLightCheck_Click(object sender, EventArgs e)
+        {
+            iowHandle = IowKitGetDeviceHandle(selectedDevice);
+            LightCheck LightCheck = new LightCheck();
+            LightCheck.Show();
+        }
+
+        private void cb_IowSelector_MouseHover(object sender, EventArgs e)
+        {
+            tt_explain.Show("select connected device", cb_IowSelector);
+        }
+
+        private void btn_switchToVisualizer_MouseHover(object sender, EventArgs e)
+        {
+            tt_explain.Show("open button and light visualizer", btn_switchToVisualizer);
+        }
+
+        private void btn_requestIowStatus_MouseHover(object sender, EventArgs e)
+        {
+            tt_explain.Show("request device information", btn_requestIowStatus);
+        }
+
     }
 }
