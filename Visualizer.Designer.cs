@@ -137,6 +137,7 @@
             this.lbl_lightvisualizer.Size = new System.Drawing.Size(99, 18);
             this.lbl_lightvisualizer.TabIndex = 2;
             this.lbl_lightvisualizer.Text = "light visualizer";
+            this.lbl_lightvisualizer.MouseHover += new System.EventHandler(this.lbl_lightvisualizer_MouseHover);
             // 
             // lbl_buttonvisualizer
             // 

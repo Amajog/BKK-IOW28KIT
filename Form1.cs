@@ -133,5 +133,15 @@ namespace IOW28KIT
             tt_explain.Show("request device information", btn_requestIowStatus);
         }
 
+        private void btn_switchToLightCheck_MouseHover(object sender, EventArgs e)
+        {
+            tt_explain.Show("play with the light", btn_switchToLightCheck);
+        }
+
+        private void btn_hint_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Howering over elements can show u their function (and maybe their secrets)");
+        }
+
     }
 }

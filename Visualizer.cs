@@ -195,13 +195,13 @@ namespace IOW28KIT
             foreach (int i in panelselect)
             {
                 Pnlnum[i].BackColor = Color.Red;
-                Pnlnum[i + 4].BackColor = Color.OrangeRed;
+                Pnlnum[i + 4].BackColor = Color.Red;
             }
         }
 
         private void RevalueData(int x)
         {
-            Data[1] = Convert.ToByte(Data[1] - x);
+                Data[1] = Convert.ToByte(Data[1] - x);
         }
 
 
@@ -401,6 +401,11 @@ namespace IOW28KIT
         private void lbl_clickLight_MouseHover(object sender, EventArgs e)
         {
             tt_explains.Show("click me 🤫", lbl_clickLight);
+        }
+
+        private void lbl_lightvisualizer_MouseHover(object sender, EventArgs e)
+        {
+            tt_explains.Show("click on black panel to light the LED", lbl_lightvisualizer);
         }
     }
 }

@@ -55,7 +55,7 @@ namespace IOW28KIT
             // lbl text to tell Data[1] value in hex and dec
             int value = Data[1];                                        // dec
             string valueHEX = value.ToString("X");                      // hex
-            lbl_Data1.Text = "DATA[1]= " + valueHEX + "/" + value;  // output
+            lbl_Data1.Text = "DATA[1]= " + valueHEX + "/" + value;      // output
         }
 
         private void cb_LED_P05_CheckedChanged(object sender, EventArgs e)
@@ -79,7 +79,7 @@ namespace IOW28KIT
             // lbl text to tell Data[1] value in hex and dec
             int value = Data[1];                                        // dec
             string valueHEX = value.ToString("X");                      // hex
-            lbl_Data1.Text = "DATA[1]= " + valueHEX + "/" + value;  // output
+            lbl_Data1.Text = "DATA[1]= " + valueHEX + "/" + value;      // output
         }
 
         private void cb_LED_P06_CheckedChanged(object sender, EventArgs e)
@@ -131,22 +131,25 @@ namespace IOW28KIT
         }
 
         //LightShow
-        byte counter = 0;
+        byte counter = 3;
 
         private void btn_Run_Click(object sender, EventArgs e)
         {
-            tmr_LightShow.Enabled = true;
-            if(cb_LED_P04.Checked == false && cb_LED_P05.Checked == false && cb_LED_P06.Checked == false && cb_LED_P07.Checked == false)
+            if (!tmr_LightShow.Enabled)
             {
-                cb_LED_P04.Checked = true;
-                cb_LED_P05.Checked = true;
-                cb_LED_P06.Checked = true;
-                cb_LED_P07.Checked = true;
+                tmr_LightShow.Enabled = true;
+                if (cb_LED_P04.Checked == false && cb_LED_P05.Checked == false && cb_LED_P06.Checked == false && cb_LED_P07.Checked == false)
+                {
+                    cb_LED_P04.Checked = true;
+                    cb_LED_P05.Checked = true;
+                    cb_LED_P06.Checked = true;
+                    cb_LED_P07.Checked = true;
+                }
+                EnableCB();
             }
-            EnableCB();
         }
 
-        private void btn_switchToVisualizer_Click(object sender, EventArgs e)
+        private void btn_Stop_click(object sender, EventArgs e)
         {
             if (tmr_LightShow.Enabled == true) { EnableCB(); }
             tmr_LightShow.Enabled = false;
@@ -174,24 +177,55 @@ namespace IOW28KIT
 
         private void tmr_LightShow_Tick(object sender, EventArgs e)
         {
+            LightShow();
+        }
+
+        private void LightShow()
+        {
+
+            if (counter < 3) { counter++; }
+            else { counter = 0; }
+
             switch (counter)
             {
                 case 0:
-                    if (cb_LED_P04.Checked == true) { Data[1] = Convert.ToByte(255 - (16)); }
+                    if (cb_LED_P04.Checked == false) {
+                        LightShow();
+                        return;
+                    }
+                    else { Data[1] = Convert.ToByte(255 - (16)); }
                     break;
                 case 1:
-                    if (cb_LED_P05.Checked == true) { Data[1] = Convert.ToByte(255 - (32)); }
+                    if (cb_LED_P05.Checked == false)
+                    {
+                        LightShow();
+                        return;
+                    }
+                    else { Data[1] = Convert.ToByte(255 - (32)); }
                     break;
                 case 2:
-                    if (cb_LED_P07.Checked == true) { Data[1] = Convert.ToByte(255 - (128)); }
+                    if (cb_LED_P07.Checked == false)
+                    {
+                        LightShow();
+                        return;
+                    }
+                    else { Data[1] = Convert.ToByte(255 - (128)); }
                     break;
                 case 3:
-                    if (cb_LED_P06.Checked == true) { Data[1] = Convert.ToByte(255 - (64)); }
+                    if (cb_LED_P06.Checked == false)
+                    {
+                        LightShow();
+                        return;
+                    }
+                    else { Data[1] = Convert.ToByte(255 - (64)); }
                     break;
             }
-            if (counter < 3) { counter++; }
-            else { counter = 0; }
             IowKitWrite(iowHandle, 0, ref Data[0], 5);
+        }
+
+        private void btn_Run_MouseHover(object sender, EventArgs e)
+        {
+            tt_explains.Show("tets", btn_Run);
         }
     }
 }

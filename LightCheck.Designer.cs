@@ -39,10 +39,11 @@ namespace IOW28KIT
             this.cb_LED_P06 = new System.Windows.Forms.CheckBox();
             this.pnl_LED_P07 = new System.Windows.Forms.Panel();
             this.cb_LED_P07 = new System.Windows.Forms.CheckBox();
-            this.btn_switchToVisualizer = new System.Windows.Forms.Button();
+            this.btn_Stop = new System.Windows.Forms.Button();
             this.btn_Run = new System.Windows.Forms.Button();
             this.lbl_Data1 = new System.Windows.Forms.Label();
             this.tmr_LightShow = new System.Windows.Forms.Timer(this.components);
+            this.tt_explains = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // cb_LED_P04
@@ -133,17 +134,17 @@ namespace IOW28KIT
             this.cb_LED_P07.UseVisualStyleBackColor = true;
             this.cb_LED_P07.CheckedChanged += new System.EventHandler(this.cb_LED_P07_CheckedChanged);
             // 
-            // btn_switchToVisualizer
+            // btn_Stop
             // 
-            this.btn_switchToVisualizer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_switchToVisualizer.Location = new System.Drawing.Point(374, 471);
-            this.btn_switchToVisualizer.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_switchToVisualizer.Name = "btn_switchToVisualizer";
-            this.btn_switchToVisualizer.Size = new System.Drawing.Size(262, 87);
-            this.btn_switchToVisualizer.TabIndex = 9;
-            this.btn_switchToVisualizer.Text = "Stop";
-            this.btn_switchToVisualizer.UseVisualStyleBackColor = true;
-            this.btn_switchToVisualizer.Click += new System.EventHandler(this.btn_switchToVisualizer_Click);
+            this.btn_Stop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Stop.Location = new System.Drawing.Point(374, 471);
+            this.btn_Stop.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Stop.Name = "btn_Stop";
+            this.btn_Stop.Size = new System.Drawing.Size(262, 87);
+            this.btn_Stop.TabIndex = 9;
+            this.btn_Stop.Text = "Stop";
+            this.btn_Stop.UseVisualStyleBackColor = true;
+            this.btn_Stop.Click += new System.EventHandler(this.btn_Stop_click);
             // 
             // btn_Run
             // 
@@ -156,6 +157,7 @@ namespace IOW28KIT
             this.btn_Run.Text = "Run";
             this.btn_Run.UseVisualStyleBackColor = true;
             this.btn_Run.Click += new System.EventHandler(this.btn_Run_Click);
+            this.btn_Run.MouseHover += new System.EventHandler(this.btn_Run_MouseHover);
             // 
             // lbl_Data1
             // 
@@ -180,7 +182,7 @@ namespace IOW28KIT
             this.ClientSize = new System.Drawing.Size(660, 575);
             this.Controls.Add(this.lbl_Data1);
             this.Controls.Add(this.btn_Run);
-            this.Controls.Add(this.btn_switchToVisualizer);
+            this.Controls.Add(this.btn_Stop);
             this.Controls.Add(this.pnl_LED_P07);
             this.Controls.Add(this.cb_LED_P07);
             this.Controls.Add(this.pnl_LED_P06);
@@ -209,9 +211,10 @@ namespace IOW28KIT
         private System.Windows.Forms.CheckBox cb_LED_P06;
         private System.Windows.Forms.Panel pnl_LED_P07;
         private System.Windows.Forms.CheckBox cb_LED_P07;
-        private System.Windows.Forms.Button btn_switchToVisualizer;
+        private System.Windows.Forms.Button btn_Stop;
         private System.Windows.Forms.Button btn_Run;
         private System.Windows.Forms.Label lbl_Data1;
         private System.Windows.Forms.Timer tmr_LightShow;
+        private System.Windows.Forms.ToolTip tt_explains;
     }
 }

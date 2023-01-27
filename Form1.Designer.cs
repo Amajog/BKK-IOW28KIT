@@ -103,6 +103,7 @@
             this.btn_hint.TabIndex = 5;
             this.btn_hint.Text = "ReadMe";
             this.btn_hint.UseVisualStyleBackColor = true;
+            this.btn_hint.Click += new System.EventHandler(this.btn_hint_Click);
             // 
             // btn_switchToLightCheck
             // 
@@ -114,6 +115,7 @@
             this.btn_switchToLightCheck.Text = "Light Check";
             this.btn_switchToLightCheck.UseVisualStyleBackColor = true;
             this.btn_switchToLightCheck.Click += new System.EventHandler(this.btn_switchToLightCheck_Click);
+            this.btn_switchToLightCheck.MouseHover += new System.EventHandler(this.btn_switchToLightCheck_MouseHover);
             // 
             // Form1
             // 
