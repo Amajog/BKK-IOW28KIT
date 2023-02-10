@@ -1,0 +1,12 @@
+C:\Users\Amajog\source\repos\IOW28KIT\bin\Debug\IOW28KIT.exe.config
+C:\Users\Amajog\source\repos\IOW28KIT\bin\Debug\IOW28KIT.exe
+C:\Users\Amajog\source\repos\IOW28KIT\bin\Debug\IOW28KIT.pdb
+C:\Users\Amajog\source\repos\IOW28KIT\obj\Debug\IOW28KIT.csproj.AssemblyReference.cache
+C:\Users\Amajog\source\repos\IOW28KIT\obj\Debug\IOW28KIT.Form1.resources
+C:\Users\Amajog\source\repos\IOW28KIT\obj\Debug\IOW28KIT.Properties.Resources.resources
+C:\Users\Amajog\source\repos\IOW28KIT\obj\Debug\IOW28KIT.csproj.GenerateResource.cache
+C:\Users\Amajog\source\repos\IOW28KIT\obj\Debug\IOW28KIT.csproj.CoreCompileInputs.cache
+C:\Users\Amajog\source\repos\IOW28KIT\obj\Debug\IOW28KIT.exe
+C:\Users\Amajog\source\repos\IOW28KIT\obj\Debug\IOW28KIT.pdb
+C:\Users\Amajog\source\repos\IOW28KIT\obj\Debug\IOW28KIT.Visualizer.resources
+C:\Users\Amajog\source\repos\IOW28KIT\obj\Debug\IOW28KIT.LightCheck.resources
